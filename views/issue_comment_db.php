@@ -1,7 +1,7 @@
 <?php
 include 'config/db.php';
 include 'libraries/general.php';
-include 'libraries/mattermost.php';
+
 $issue_id = mysqli_real_escape_string($conn, $_POST['issue_id']);
 $issue_comment = mysqli_real_escape_string($conn, $_POST['issue_comment']);
 $issue_comment_by = $_SESSION['user_id'];
