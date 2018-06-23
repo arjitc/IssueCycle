@@ -1,7 +1,6 @@
 <?php
 include 'config/db.php';
 include 'libraries/general.php';
-include 'libraries/mattermost.php';
 
 $parent_issue_id = mysqli_real_escape_string($conn, $_GET['parent_issue_id']);
 $issue_id = mysqli_real_escape_string($conn, $_GET['issue_id']);
