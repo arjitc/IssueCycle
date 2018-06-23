@@ -1,7 +1,6 @@
 <?php
 include 'config/db.php';
 include 'libraries/general.php';
-include 'libraries/mattermost.php';
 
 $issue_id = mysqli_real_escape_string($conn, $_POST['issue_id']);
 $issue_body = mysqli_real_escape_string($conn, $_POST['issue_body']);
