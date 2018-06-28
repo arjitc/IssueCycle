@@ -56,7 +56,17 @@
 										$linked_issue_id = $row["issue_id"];
 										$linked_issue_subject = get_issue_subject($row["issue_id"]);
 										$linked_issue_project_id = get_issue_project_key_from_issue_id($row["issue_id"]);
-										echo "<a href='issue.php?id=$linked_issue_id'>[$linked_issue_project_id-$linked_issue_id] $linked_issue_subject</a> <small>[Remove Link]</small>";
+										echo "<a href='issue.php?id=$linked_issue_id'>";
+										if(get_issue_status($linked_issue_id) == "Done") {
+											echo "<span class='badge badge-success'>Done</span>";
+										} else if(get_issue_status($linked_issue_id) == "In Progress") {
+											echo "<span class='badge badge-info'>In Progress</span>";
+										} else if(get_issue_status($linked_issue_id) == "On Hold") {
+											echo "<span class='badge badge-dark'>On Hold</span>";
+										} else {
+											echo "<span class='badge badge-primary'>Open</span>";
+										}
+										echo " [$linked_issue_project_id-$linked_issue_id] $linked_issue_subject</a> <small>[Remove Link]</small>";
 										echo "<br>";
 									}
 								}
