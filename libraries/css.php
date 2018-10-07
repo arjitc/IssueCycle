@@ -13,4 +13,43 @@ img {
 .issue-done {
 	background: linear-gradient(#def4d7, white);
 }
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 70px 0 0; /* Height of navbar */
+  padding-right: 10px;
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 70px; /* Space for fixed navbar */
+}
 </style>
